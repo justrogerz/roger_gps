@@ -1,3 +1,5 @@
+ESX = exports.es_extended:getSharedObject()
+
 local Civici = {
     ["3030"] = vector2(1680.065, 6442.59),
     ["3029"] = vector2(1456.447, 6321.467),
@@ -887,7 +889,7 @@ RegisterCommand('gps', function(source, args)
         return
     end
 
-    for k,v in ipairs(Civici) do
+    for k,v in pairs(Civici) do
         if k == args[1] then
             ESX.ShowNotification('Hai impostato il GPS.')
             SetNewWaypoint(v)
